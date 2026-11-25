@@ -1,0 +1,10 @@
+{
+  "mode": "split-first-regenerate",
+  "seed": 2026,
+  "training_pool_rows": 39948,
+  "selected_rows": 1000,
+  "test_reserved_before_selection": true,
+  "input_levels_retained": "34/34",
+  "pairwise_combinations_retained": "491/491",
+  "output_ranges_preserved": "16/16"
+}

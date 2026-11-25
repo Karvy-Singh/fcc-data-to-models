@@ -1,0 +1,35 @@
+{
+  "Linear regression": {},
+  "Polynomial regression": {
+    "poly__degree": 3
+  },
+  "Ridge regression": {
+    "model__alpha": 1.0
+  },
+  "Decision tree": {
+    "max_depth": 10,
+    "min_samples_leaf": 2
+  },
+  "Random forest": {
+    "max_depth": 12,
+    "max_features": 1.0,
+    "min_samples_leaf": 2
+  },
+  "Extra trees": {
+    "max_depth": 12,
+    "max_features": 0.7,
+    "min_samples_leaf": 2
+  },
+  "Gradient boosting": {
+    "estimator__l2_regularization": 1.0,
+    "estimator__learning_rate": 0.1,
+    "estimator__max_leaf_nodes": 15
+  },
+  "Neural network": {
+    "model__regressor__alpha": 0.01,
+    "model__regressor__hidden_layer_sizes": [
+      64,
+      64
+    ]
+  }
+}
