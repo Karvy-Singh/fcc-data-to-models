@@ -26,6 +26,7 @@ from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 from sklearn.tree import DecisionTreeRegressor
 
 from fcc_diverse_sampler import (
+    BLUE_COLUMNS,
     OUTPUT_COLUMNS,
     REQUIRED_COLUMNS,
     colname,
@@ -179,6 +180,7 @@ def write_final_dataset(workbook, data, selected_ids, header, units, data_dir, s
         'input_levels_retained': f'{selected_levels}/{source_levels}',
         'pairwise_combinations_retained': f'{len(pairs(selected))}/{len(pairs(data))}',
         'output_ranges_preserved': f'{ranges_preserved}/{len(OUTPUT_COLUMNS)}',
+        'excluded_blue_columns': [colname(column) for column in BLUE_COLUMNS],
     }
     return report
 

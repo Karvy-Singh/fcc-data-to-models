@@ -8,9 +8,8 @@ Two modes:
                extrema anchors -> greedy observed pair coverage -> balanced
                seeded selection -> quota-improving swaps.
 
-Blue columns are NEVER used to choose observations. They are exported to a
-traceability CSV only. Input columns are A:G. Target columns are
-T:AA, AC:AI, AO. Source sheet: first sheet ("Set-2").
+Blue columns AJ, AL and AM are NEVER used to choose observations. Input columns
+are A:G. Every other column is a target. Source sheet: first sheet ("Set-2").
 
 Example:
   python fcc_diverse_sampler.py FCC_NN_Data_Set2.xlsx --mode exact \
@@ -19,11 +18,11 @@ Example:
       --seed 2026 --outdir new_result
 
 Outputs in --outdir:
-  NN_1000.csv              : 7 yellow inputs, 16 green targets; header+units
+  NN_1000.csv              : 7 inputs and 32 non-blue targets; header+units
   All_Columns_1000.csv     : all original columns + Source Excel Row
   selected_excel_rows.txt  : exact original Excel row indices (1-based)
   audit_input_levels.csv   : marginal input-level distribution checks
-  audit_output_ranges.csv  : green-target minima/maxima and quantiles
+  audit_output_ranges.csv  : target minima/maxima and quantiles
   audit_summary.json       : counts, coverage and seed, hash of input workbook
 """
 
@@ -41,7 +40,8 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 INPUT_COLUMNS = tuple(range(7))
-OUTPUT_COLUMNS = tuple(list(range(19, 27)) + list(range(28, 35)) + [40])
+BLUE_COLUMNS = (35, 37, 38)
+OUTPUT_COLUMNS = tuple(i for i in range(7, 42) if i not in BLUE_COLUMNS)
 REQUIRED_COLUMNS = INPUT_COLUMNS + OUTPUT_COLUMNS
 ROW_TARGET_DEFAULT = 1000
 NS = '{http://schemas.openxmlformats.org/spreadsheetml/2006/main}'
@@ -77,7 +77,7 @@ def read_strings(z):
 
 
 def read_source(path, keep_full_ids=None):
-    """Streaming .xlsx reader, retaining only A:G + green targets in RAM.
+    """Streaming .xlsx reader, retaining only A:G plus non-blue targets in RAM.
 
     keep_full_ids (exact mode) additionally retains entire selected rows, so
     the original 49,935-row file needs only one pass in that mode.
@@ -119,9 +119,9 @@ def read_source(path, keep_full_ids=None):
                         inputs = tuple(float(record[j]) for j in INPUT_COLUMNS)
                         targets = tuple(float(record[j]) for j in OUTPUT_COLUMNS)
                     except (ValueError, TypeError) as exc:
-                        raise ValueError(f'Non-numeric input/green target at Excel row {rownum}') from exc
+                        raise ValueError(f'Non-numeric input/target at Excel row {rownum}') from exc
                     if not all(math.isfinite(x) for x in inputs + targets):
-                        raise ValueError(f'Nonfinite input/green target at Excel row {rownum}')
+                        raise ValueError(f'Nonfinite input/target at Excel row {rownum}')
                     data.append((rownum, inputs, targets))
                     if keep_full_ids is not None and rownum in keep_full_ids:
                         full_rows[rownum] = record
@@ -168,7 +168,7 @@ def input_quotas(data, n):
 
 
 def select_extrema(data):
-    """Anchor the first row reaching global min/max for each green target."""
+    """Anchor the first row reaching global min/max for each target."""
     mins = [(float('inf'), None) for _ in OUTPUT_COLUMNS]
     maxs = [(float('-inf'), None) for _ in OUTPUT_COLUMNS]
     for idx, (_, _, y) in enumerate(data):
@@ -360,7 +360,7 @@ def audit(data, ids, header, outdir, requested, mode, seed, protected_count, wor
                                 round(p_sample, 6), round(diff, 6)])
     write_csv(outdir/'audit_input_levels.csv', level_audit)
 
-    output_audit = [['Green target', 'Excel column', 'Source min', 'Sample min',
+    output_audit = [['Target', 'Excel column', 'Source min', 'Sample min',
                      'Source max', 'Sample max', 'Source P5', 'Sample P5',
                      'Source P50', 'Sample P50', 'Source P95', 'Sample P95']]
     preserved_ranges = 0
@@ -390,13 +390,13 @@ def audit(data, ids, header, outdir, requested, mode, seed, protected_count, wor
         'source_file': workbook_path.name, 'source_sha256': hash_digest.hexdigest(),
         'source_valid_data_rows': len(data), 'selected_rows': len(sample),
         'input_columns': [colname(i) for i in INPUT_COLUMNS],
-        'green_target_columns': [colname(i) for i in OUTPUT_COLUMNS],
+        'target_columns': [colname(i) for i in OUTPUT_COLUMNS],
         'individual_input_levels_source': sum(map(len, full_counts)),
         'individual_input_levels_retained': levels_retained,
         'pairwise_combinations_source': len(available_pairs),
         'pairwise_combinations_retained': len(covered_pairs),
-        'green_output_ranges_preserved': preserved_ranges,
-        'green_output_count': len(OUTPUT_COLUMNS),
+        'output_ranges_preserved': preserved_ranges,
+        'output_count': len(OUTPUT_COLUMNS),
         'max_input_level_proportion_deviation_pp': round(max_diff, 6),
         'protected_extrema_and_pairwise_anchors': protected_count,
         'selected_ids_sha256': hashlib.sha256(('\n'.join(map(str,ids))+'\n').encode()).hexdigest(),

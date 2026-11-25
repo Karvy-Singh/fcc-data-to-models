@@ -6,5 +6,10 @@
   "test_reserved_before_selection": true,
   "input_levels_retained": "34/34",
   "pairwise_combinations_retained": "491/491",
-  "output_ranges_preserved": "16/16"
+  "output_ranges_preserved": "32/32",
+  "excluded_blue_columns": [
+    "AJ",
+    "AL",
+    "AM"
+  ]
 }
