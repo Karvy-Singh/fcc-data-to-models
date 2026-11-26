@@ -8,8 +8,9 @@ Two modes:
                extrema anchors -> greedy observed pair coverage -> balanced
                seeded selection -> quota-improving swaps.
 
-Blue columns AJ, AL and AM are NEVER used to choose observations. Input columns
-are A:G. Every other column is a target. Source sheet: first sheet ("Set-2").
+Model inputs are A:G. Targets are T:AA, AC:AI and AO. All other columns are
+excluded from model fitting and sample selection. Source sheet: first sheet
+("Set-2").
 
 Example:
   python fcc_diverse_sampler.py FCC_NN_Data_Set2.xlsx --mode exact \
@@ -18,7 +19,7 @@ Example:
       --seed 2026 --outdir new_result
 
 Outputs in --outdir:
-  NN_1000.csv              : 7 inputs and 32 non-blue targets; header+units
+  NN_1000.csv              : 7 inputs and 16 targets; header+units
   All_Columns_1000.csv     : all original columns + Source Excel Row
   selected_excel_rows.txt  : exact original Excel row indices (1-based)
   audit_input_levels.csv   : marginal input-level distribution checks
@@ -41,8 +42,9 @@ from xml.etree import ElementTree as ET
 
 INPUT_COLUMNS = tuple(range(7))
 BLUE_COLUMNS = (35, 37, 38)
-OUTPUT_COLUMNS = tuple(i for i in range(7, 42) if i not in BLUE_COLUMNS)
+OUTPUT_COLUMNS = tuple(list(range(19, 27)) + list(range(28, 35)) + [40])
 REQUIRED_COLUMNS = INPUT_COLUMNS + OUTPUT_COLUMNS
+SAMPLING_INPUT_COUNT = 7
 ROW_TARGET_DEFAULT = 1000
 NS = '{http://schemas.openxmlformats.org/spreadsheetml/2006/main}'
 CELL_REF = re.compile(r'^([A-Z]+)')
@@ -77,7 +79,7 @@ def read_strings(z):
 
 
 def read_source(path, keep_full_ids=None):
-    """Streaming .xlsx reader, retaining only A:G plus non-blue targets in RAM.
+    """Streaming .xlsx reader retaining model inputs and targets in RAM.
 
     keep_full_ids (exact mode) additionally retains entire selected rows, so
     the original 49,935-row file needs only one pass in that mode.
@@ -154,7 +156,7 @@ def exact_ids(manifest):
 
 def input_quotas(data, n):
     """Largest-remainder allocation: exact quotas per input, summing to n."""
-    counts = [Counter(row[1][j] for row in data) for j in INPUT_COLUMNS]
+    counts = [Counter(row[1][j] for row in data) for j in range(SAMPLING_INPUT_COUNT)]
     quotas = []
     for c in counts:
         expected = {v: count * n / len(data) for v, count in c.items()}
@@ -184,14 +186,18 @@ def pair_masks(data):
     """One big-integer bit mask of observed two-factor levels per data row."""
     all_pairs = set()
     for _, x, _ in data:
-        all_pairs.update((i, x[i], j, x[j]) for i in range(7) for j in range(i + 1, 7))
+        all_pairs.update(
+            (i, x[i], j, x[j])
+            for i in range(SAMPLING_INPUT_COUNT)
+            for j in range(i + 1, SAMPLING_INPUT_COUNT)
+        )
     ordered = sorted(all_pairs)
     lookup = {key: p for p, key in enumerate(ordered)}
     masks = []
     for _, x, _ in data:
         mask = 0
-        for i in range(7):
-            for j in range(i + 1, 7):
+        for i in range(SAMPLING_INPUT_COUNT):
+            for j in range(i + 1, SAMPLING_INPUT_COUNT):
                 mask |= 1 << lookup[(i, x[i], j, x[j])]
         masks.append(mask)
     return masks, len(ordered)
@@ -225,7 +231,7 @@ def cover_all_pairs(masks, pair_count, selected, rng, limit):
 def balance_score(x, counts, quotas):
     """Highest score for under-represented levels; penalize overshoot."""
     score = 0.0
-    for j, v in enumerate(x):
+    for j, v in enumerate(x[:SAMPLING_INPUT_COUNT]):
         target = quotas[j][v]
         deficit = target - counts[j][v]
         if deficit > 0:
@@ -238,7 +244,7 @@ def balance_score(x, counts, quotas):
 def delta_swap(x_out, x_in, counts, quotas):
     """Decrease in sum of squared quota errors if out/in are exchanged."""
     improvement = 0
-    for j in range(7):
+    for j in range(SAMPLING_INPUT_COUNT):
         a, b = x_out[j], x_in[j]
         if a == b:
             continue
@@ -255,7 +261,10 @@ def generate_ids(data, requested, seed):
     masks, pair_count = pair_masks(data)
     selected = cover_all_pairs(masks, pair_count, selected, rng, requested)
     protected = set(selected)  # Never swap out extrema or pairwise coverage anchors.
-    counts = [Counter(data[idx][1][j] for idx in selected) for j in range(7)]
+    counts = [
+        Counter(data[idx][1][j] for idx in selected)
+        for j in range(SAMPLING_INPUT_COUNT)
+    ]
     N = len(data)
 
     # Seeded candidate-search filling (candidate pool size is part of method).
@@ -272,7 +281,7 @@ def generate_ids(data, requested, seed):
         if best is None:
             raise RuntimeError('No available rows to fill sample')
         selected.add(best)
-        for j, val in enumerate(data[best][1]):
+        for j, val in enumerate(data[best][1][:SAMPLING_INPUT_COUNT]):
             counts[j][val] += 1
 
     # Quota repair: swap *only* unprotected rows. Every pair and output extreme
@@ -305,7 +314,7 @@ def generate_ids(data, requested, seed):
                         best_gain, best_pair = gain, (iout, iin)
             if best_pair is not None:
                 old, new = best_pair
-                for k in range(7):
+                for k in range(SAMPLING_INPUT_COUNT):
                     counts[k][data[old][1][k]] -= 1
                     counts[k][data[new][1][k]] += 1
                 selected.remove(old)
@@ -343,7 +352,10 @@ def audit(data, ids, header, outdir, requested, mode, seed, protected_count, wor
     if len(sample) != requested:
         raise ValueError('Number of found source rows does not equal requested n')
     full_counts, _ = input_quotas(data, requested)
-    sample_counts = [Counter(row[1][j] for row in sample) for j in range(7)]
+    sample_counts = [
+        Counter(row[1][j] for row in sample)
+        for j in range(SAMPLING_INPUT_COUNT)
+    ]
     level_audit = [['Input', 'Excel column', 'Level', 'Source count', 'Source %',
                     'Sample count', 'Sample %', 'Difference (percentage points)']]
     max_diff = 0
@@ -377,8 +389,12 @@ def audit(data, ids, header, outdir, requested, mode, seed, protected_count, wor
     write_csv(outdir/'audit_output_ranges.csv', output_audit)
 
     def pairs(rows):
-        return {(j, row[1][j], k, row[1][k]) for row in rows for j in range(7)
-                for k in range(j + 1, 7)}
+        return {
+            (j, row[1][j], k, row[1][k])
+            for row in rows
+            for j in range(SAMPLING_INPUT_COUNT)
+            for k in range(j + 1, SAMPLING_INPUT_COUNT)
+        }
     available_pairs = pairs(data)
     covered_pairs = pairs(sample)
     hash_digest = hashlib.sha256()

@@ -3,10 +3,12 @@
   "seed": 2026,
   "training_pool_rows": 39948,
   "selected_rows": 1000,
+  "model_input_columns": 7,
+  "target_columns": 16,
   "test_reserved_before_selection": true,
   "input_levels_retained": "34/34",
   "pairwise_combinations_retained": "491/491",
-  "output_ranges_preserved": "32/32",
+  "output_ranges_preserved": "16/16",
   "excluded_blue_columns": [
     "AJ",
     "AL",

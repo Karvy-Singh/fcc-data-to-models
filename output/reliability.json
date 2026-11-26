@@ -1,0 +1,1130 @@
+{
+  "schema": {
+    "inputs": "A:G",
+    "targets": "T:AA, AC:AI, AO",
+    "source_rows": 49935,
+    "selected_training_rows": 1000
+  },
+  "repeated_split_summary": {
+    "Polynomial regression": {
+      "mean_test_r2": 0.9938106675087341,
+      "std_test_r2": 0.0001694031190445305,
+      "minimum_seed_test_r2": 0.9934961332241026,
+      "maximum_seed_test_r2": 0.9940744922693379,
+      "mean_test_nrmse": 0.0714384192390898
+    },
+    "Gradient boosting": {
+      "mean_test_r2": 0.9974110492320849,
+      "std_test_r2": 0.00036898359197420514,
+      "minimum_seed_test_r2": 0.9966894776924944,
+      "maximum_seed_test_r2": 0.9979441466345886,
+      "mean_test_nrmse": 0.04375711808225376
+    },
+    "Neural network": {
+      "mean_test_r2": 0.9960272375582327,
+      "std_test_r2": 0.0007094047034151334,
+      "minimum_seed_test_r2": 0.9951750166407067,
+      "maximum_seed_test_r2": 0.9974665408403637,
+      "mean_test_nrmse": 0.06075671955585832
+    }
+  },
+  "repeated_split_details": [
+    {
+      "seed": 2026,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.9939768245703425,
+          "minimum_target_r2": 0.983378812052948,
+          "mean_nrmse": 0.0705285123109505
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.9976540715790085,
+          "minimum_target_r2": 0.9922938504385208,
+          "mean_nrmse": 0.042102338818134355
+        },
+        "Neural network": {
+          "mean_r2": 0.9951750166407067,
+          "minimum_target_r2": 0.9895136722307407,
+          "mean_nrmse": 0.06762512486654565
+        }
+      }
+    },
+    {
+      "seed": 2027,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.9938030204214101,
+          "minimum_target_r2": 0.9821089773988748,
+          "mean_nrmse": 0.07144601937745468
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.9972197969733517,
+          "minimum_target_r2": 0.9905629729747295,
+          "mean_nrmse": 0.04520864030241477
+        },
+        "Neural network": {
+          "mean_r2": 0.9964516130972216,
+          "minimum_target_r2": 0.9904680139739173,
+          "mean_nrmse": 0.057462972259343686
+        }
+      }
+    },
+    {
+      "seed": 2028,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.9938426623010657,
+          "minimum_target_r2": 0.9825705178370525,
+          "mean_nrmse": 0.07145554739623902
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.997758441164679,
+          "minimum_target_r2": 0.9922232807240577,
+          "mean_nrmse": 0.041338032893677275
+        },
+        "Neural network": {
+          "mean_r2": 0.995262190139184,
+          "minimum_target_r2": 0.9887318566496783,
+          "mean_nrmse": 0.06718673367498187
+        }
+      }
+    },
+    {
+      "seed": 2029,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.9934961332241026,
+          "minimum_target_r2": 0.9813427793770256,
+          "mean_nrmse": 0.0730772292959059
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.9975760713828719,
+          "minimum_target_r2": 0.9924378612836533,
+          "mean_nrmse": 0.04339271742314666
+        },
+        "Neural network": {
+          "mean_r2": 0.9957464119266739,
+          "minimum_target_r2": 0.9890177814555626,
+          "mean_nrmse": 0.06301366218193753
+        }
+      }
+    },
+    {
+      "seed": 2030,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.9940744922693379,
+          "minimum_target_r2": 0.9833661746753015,
+          "mean_nrmse": 0.07008030666100401
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.9975991433361922,
+          "minimum_target_r2": 0.9905583518625803,
+          "mean_nrmse": 0.042113825349321524
+        },
+        "Neural network": {
+          "mean_r2": 0.9967229014125493,
+          "minimum_target_r2": 0.9931319750513733,
+          "mean_nrmse": 0.05598109898509465
+        }
+      }
+    },
+    {
+      "seed": 2031,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.993573686006054,
+          "minimum_target_r2": 0.9812164824855535,
+          "mean_nrmse": 0.07273837108382954
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.9966894776924944,
+          "minimum_target_r2": 0.9866688414397662,
+          "mean_nrmse": 0.048496116561447984
+        },
+        "Neural network": {
+          "mean_r2": 0.9974665408403637,
+          "minimum_target_r2": 0.9935335598038203,
+          "mean_nrmse": 0.048092001168377335
+        }
+      }
+    },
+    {
+      "seed": 2032,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.9938081952889968,
+          "minimum_target_r2": 0.9826242281605229,
+          "mean_nrmse": 0.07147593825500172
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.9972543794682704,
+          "minimum_target_r2": 0.9897791789542164,
+          "mean_nrmse": 0.045317029457136865
+        },
+        "Neural network": {
+          "mean_r2": 0.9955433151599002,
+          "minimum_target_r2": 0.9889137718482538,
+          "mean_nrmse": 0.0640292801862539
+        }
+      }
+    },
+    {
+      "seed": 2033,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.9938023483365187,
+          "minimum_target_r2": 0.9821713646547179,
+          "mean_nrmse": 0.07136991112780273
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.9969156980277882,
+          "minimum_target_r2": 0.9878281085388302,
+          "mean_nrmse": 0.04741670055616837
+        },
+        "Neural network": {
+          "mean_r2": 0.9953563298716753,
+          "minimum_target_r2": 0.9877977139379032,
+          "mean_nrmse": 0.0658054796380807
+        }
+      }
+    },
+    {
+      "seed": 2034,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.9939823070749174,
+          "minimum_target_r2": 0.983113912237829,
+          "mean_nrmse": 0.07039113166349412
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.9974992660616029,
+          "minimum_target_r2": 0.9882425253332979,
+          "mean_nrmse": 0.04242059354338305
+        },
+        "Neural network": {
+          "mean_r2": 0.9964980407660795,
+          "minimum_target_r2": 0.9918060534395494,
+          "mean_nrmse": 0.057743091751042704
+        }
+      }
+    },
+    {
+      "seed": 2035,
+      "models": {
+        "Polynomial regression": {
+          "mean_r2": 0.993747005594596,
+          "minimum_target_r2": 0.9824466489359588,
+          "mean_nrmse": 0.07182122521921586
+        },
+        "Gradient boosting": {
+          "mean_r2": 0.9979441466345886,
+          "minimum_target_r2": 0.9934313953647518,
+          "mean_nrmse": 0.03976518591770673
+        },
+        "Neural network": {
+          "mean_r2": 0.9960500157279735,
+          "minimum_target_r2": 0.9900326707363011,
+          "mean_nrmse": 0.06062775084692505
+        }
+      }
+    }
+  ],
+  "gradient_boosting_learning_curve": [
+    {
+      "training_rows": 250,
+      "mean_test_r2": 0.9825631559666135,
+      "minimum_target_r2": 0.921295688808552,
+      "mean_test_nrmse": 0.1119041474833778
+    },
+    {
+      "training_rows": 500,
+      "mean_test_r2": 0.9930296242095737,
+      "minimum_target_r2": 0.9740359160064773,
+      "mean_test_nrmse": 0.07153585285988824
+    },
+    {
+      "training_rows": 1000,
+      "mean_test_r2": 0.9976540715790085,
+      "minimum_target_r2": 0.9922938504385208,
+      "mean_test_nrmse": 0.042102338818134355
+    },
+    {
+      "training_rows": 2000,
+      "mean_test_r2": 0.9988549685766966,
+      "minimum_target_r2": 0.9959358108595904,
+      "mean_test_nrmse": 0.029214015863657652
+    },
+    {
+      "training_rows": 5000,
+      "mean_test_r2": 0.9994828208921696,
+      "minimum_target_r2": 0.9982946121704119,
+      "mean_test_nrmse": 0.019900290754336372
+    },
+    {
+      "training_rows": 39948,
+      "mean_test_r2": 0.9997773830388672,
+      "minimum_target_r2": 0.9993572104237631,
+      "mean_test_nrmse": 0.012983852560585088
+    }
+  ],
+  "held_out_level_tests": [
+    {
+      "model": "Polynomial regression",
+      "input": "Feed Temperature",
+      "excel_column": "A",
+      "test_type": "interpolation",
+      "held_out_level": 360.0,
+      "test_rows": 10061,
+      "mean_r2": 0.9948240624170425,
+      "minimum_target_r2": 0.9857935778816865,
+      "mean_nrmse": 0.06586297017543993
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Feed Temperature",
+      "excel_column": "A",
+      "test_type": "interpolation",
+      "held_out_level": 360.0,
+      "test_rows": 10061,
+      "mean_r2": 0.9375317497238309,
+      "minimum_target_r2": 0.5528737355006896,
+      "mean_nrmse": 0.1634572614706387
+    },
+    {
+      "model": "Neural network",
+      "input": "Feed Temperature",
+      "excel_column": "A",
+      "test_type": "interpolation",
+      "held_out_level": 360.0,
+      "test_rows": 10061,
+      "mean_r2": 0.9962416984318254,
+      "minimum_target_r2": 0.9921393611398767,
+      "mean_nrmse": 0.05982228581176479
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Feed Temperature",
+      "excel_column": "A",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 300.0,
+      "test_rows": 10179,
+      "mean_r2": 0.9919804072388014,
+      "minimum_target_r2": 0.9789368204348069,
+      "mean_nrmse": 0.08304204484021713
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Feed Temperature",
+      "excel_column": "A",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 300.0,
+      "test_rows": 10179,
+      "mean_r2": 0.9372889027700869,
+      "minimum_target_r2": 0.5457679152564685,
+      "mean_nrmse": 0.16718120353775304
+    },
+    {
+      "model": "Neural network",
+      "input": "Feed Temperature",
+      "excel_column": "A",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 300.0,
+      "test_rows": 10179,
+      "mean_r2": 0.9923825909467862,
+      "minimum_target_r2": 0.9827055737551581,
+      "mean_nrmse": 0.08409493661950027
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Feed Temperature",
+      "excel_column": "A",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 420.0,
+      "test_rows": 9578,
+      "mean_r2": 0.9846113429124128,
+      "minimum_target_r2": 0.9409356537599349,
+      "mean_nrmse": 0.11166648210324247
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Feed Temperature",
+      "excel_column": "A",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 420.0,
+      "test_rows": 9578,
+      "mean_r2": 0.9218473407811438,
+      "minimum_target_r2": 0.5077413772023285,
+      "mean_nrmse": 0.19544621863708916
+    },
+    {
+      "model": "Neural network",
+      "input": "Feed Temperature",
+      "excel_column": "A",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 420.0,
+      "test_rows": 9578,
+      "mean_r2": 0.9868341718252673,
+      "minimum_target_r2": 0.9742034911950614,
+      "mean_nrmse": 0.11314670419557327
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Feed Mass Flow",
+      "excel_column": "B",
+      "test_type": "interpolation",
+      "held_out_level": 48.0,
+      "test_rows": 8246,
+      "mean_r2": 0.9937041541426166,
+      "minimum_target_r2": 0.9816215734330056,
+      "mean_nrmse": 0.07194521407608137
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Feed Mass Flow",
+      "excel_column": "B",
+      "test_type": "interpolation",
+      "held_out_level": 48.0,
+      "test_rows": 8246,
+      "mean_r2": 0.9957246713890233,
+      "minimum_target_r2": 0.9806306490505255,
+      "mean_nrmse": 0.057917803606164366
+    },
+    {
+      "model": "Neural network",
+      "input": "Feed Mass Flow",
+      "excel_column": "B",
+      "test_type": "interpolation",
+      "held_out_level": 48.0,
+      "test_rows": 8246,
+      "mean_r2": 0.9958386127434432,
+      "minimum_target_r2": 0.9894389979386164,
+      "mean_nrmse": 0.06241141331653772
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Feed Mass Flow",
+      "excel_column": "B",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 45.0,
+      "test_rows": 8303,
+      "mean_r2": 0.9904272844504656,
+      "minimum_target_r2": 0.9728390407766098,
+      "mean_nrmse": 0.08899006120313241
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Feed Mass Flow",
+      "excel_column": "B",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 45.0,
+      "test_rows": 8303,
+      "mean_r2": 0.9948694172156485,
+      "minimum_target_r2": 0.9762804922571439,
+      "mean_nrmse": 0.06381317482260082
+    },
+    {
+      "model": "Neural network",
+      "input": "Feed Mass Flow",
+      "excel_column": "B",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 45.0,
+      "test_rows": 8303,
+      "mean_r2": 0.9936462935293593,
+      "minimum_target_r2": 0.9881401029957861,
+      "mean_nrmse": 0.07853259005705773
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Feed Mass Flow",
+      "excel_column": "B",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 50.0,
+      "test_rows": 8458,
+      "mean_r2": 0.9919420959877062,
+      "minimum_target_r2": 0.9777028994614433,
+      "mean_nrmse": 0.08100744023997399
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Feed Mass Flow",
+      "excel_column": "B",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 50.0,
+      "test_rows": 8458,
+      "mean_r2": 0.9955073978029525,
+      "minimum_target_r2": 0.9818494728252237,
+      "mean_nrmse": 0.05982867165823004
+    },
+    {
+      "model": "Neural network",
+      "input": "Feed Mass Flow",
+      "excel_column": "B",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 50.0,
+      "test_rows": 8458,
+      "mean_r2": 0.9946077723369681,
+      "minimum_target_r2": 0.9877653420147784,
+      "mean_nrmse": 0.07226980442667785
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Regen Air Mass Flow",
+      "excel_column": "C",
+      "test_type": "interpolation",
+      "held_out_level": 21.0,
+      "test_rows": 8444,
+      "mean_r2": 0.9946729119092581,
+      "minimum_target_r2": 0.9848599228670047,
+      "mean_nrmse": 0.06658837436334245
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Regen Air Mass Flow",
+      "excel_column": "C",
+      "test_type": "interpolation",
+      "held_out_level": 21.0,
+      "test_rows": 8444,
+      "mean_r2": 0.9896080773978962,
+      "minimum_target_r2": 0.9415241376123761,
+      "mean_nrmse": 0.08152412727612766
+    },
+    {
+      "model": "Neural network",
+      "input": "Regen Air Mass Flow",
+      "excel_column": "C",
+      "test_type": "interpolation",
+      "held_out_level": 21.0,
+      "test_rows": 8444,
+      "mean_r2": 0.9967302568062035,
+      "minimum_target_r2": 0.9924714742612056,
+      "mean_nrmse": 0.0558844247686922
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Regen Air Mass Flow",
+      "excel_column": "C",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 15.0,
+      "test_rows": 7700,
+      "mean_r2": 0.9866694161858851,
+      "minimum_target_r2": 0.9352776258358464,
+      "mean_nrmse": 0.09947031965604614
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Regen Air Mass Flow",
+      "excel_column": "C",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 15.0,
+      "test_rows": 7700,
+      "mean_r2": 0.9891493235801563,
+      "minimum_target_r2": 0.9313458197184663,
+      "mean_nrmse": 0.08072452129454731
+    },
+    {
+      "model": "Neural network",
+      "input": "Regen Air Mass Flow",
+      "excel_column": "C",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 15.0,
+      "test_rows": 7700,
+      "mean_r2": 0.9934767294714111,
+      "minimum_target_r2": 0.9818637471963774,
+      "mean_nrmse": 0.07860285529681307
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Regen Air Mass Flow",
+      "excel_column": "C",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 25.0,
+      "test_rows": 8442,
+      "mean_r2": 0.9893525034950286,
+      "minimum_target_r2": 0.9675666634945683,
+      "mean_nrmse": 0.09358831730248672
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Regen Air Mass Flow",
+      "excel_column": "C",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 25.0,
+      "test_rows": 8442,
+      "mean_r2": 0.9873997894723971,
+      "minimum_target_r2": 0.9545355384606268,
+      "mean_nrmse": 0.09625899977340788
+    },
+    {
+      "model": "Neural network",
+      "input": "Regen Air Mass Flow",
+      "excel_column": "C",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 25.0,
+      "test_rows": 8442,
+      "mean_r2": 0.9924377351288183,
+      "minimum_target_r2": 0.9830550141167014,
+      "mean_nrmse": 0.08344023149286758
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Dispersion Steam Mass Flow",
+      "excel_column": "D",
+      "test_type": "interpolation",
+      "held_out_level": 2.0,
+      "test_rows": 12592,
+      "mean_r2": 0.9925130145073332,
+      "minimum_target_r2": 0.9845103199840871,
+      "mean_nrmse": 0.08110556129893885
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Dispersion Steam Mass Flow",
+      "excel_column": "D",
+      "test_type": "interpolation",
+      "held_out_level": 2.0,
+      "test_rows": 12592,
+      "mean_r2": 0.9805681765970721,
+      "minimum_target_r2": 0.9380435417027662,
+      "mean_nrmse": 0.12021851425918888
+    },
+    {
+      "model": "Neural network",
+      "input": "Dispersion Steam Mass Flow",
+      "excel_column": "D",
+      "test_type": "interpolation",
+      "held_out_level": 2.0,
+      "test_rows": 12592,
+      "mean_r2": 0.996320053166045,
+      "minimum_target_r2": 0.9923678660188314,
+      "mean_nrmse": 0.05900472524263335
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Dispersion Steam Mass Flow",
+      "excel_column": "D",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 1.0,
+      "test_rows": 12553,
+      "mean_r2": 0.9097841785690215,
+      "minimum_target_r2": 0.6317031487902729,
+      "mean_nrmse": 0.2503214147024948
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Dispersion Steam Mass Flow",
+      "excel_column": "D",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 1.0,
+      "test_rows": 12553,
+      "mean_r2": 0.962012440674007,
+      "minimum_target_r2": 0.762646287980898,
+      "mean_nrmse": 0.15384571677429076
+    },
+    {
+      "model": "Neural network",
+      "input": "Dispersion Steam Mass Flow",
+      "excel_column": "D",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 1.0,
+      "test_rows": 12553,
+      "mean_r2": 0.9855852809346614,
+      "minimum_target_r2": 0.9285109038513767,
+      "mean_nrmse": 0.11126696600645383
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Dispersion Steam Mass Flow",
+      "excel_column": "D",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 2.5,
+      "test_rows": 12306,
+      "mean_r2": 0.8927068921482146,
+      "minimum_target_r2": 0.45685712792298694,
+      "mean_nrmse": 0.25765408629071157
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Dispersion Steam Mass Flow",
+      "excel_column": "D",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 2.5,
+      "test_rows": 12306,
+      "mean_r2": 0.9830770733102357,
+      "minimum_target_r2": 0.9464629988524724,
+      "mean_nrmse": 0.11440337357261138
+    },
+    {
+      "model": "Neural network",
+      "input": "Dispersion Steam Mass Flow",
+      "excel_column": "D",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 2.5,
+      "test_rows": 12306,
+      "mean_r2": 0.985553014486755,
+      "minimum_target_r2": 0.9671165963787989,
+      "mean_nrmse": 0.11523140108127461
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Stripping Steam Mass Flow",
+      "excel_column": "E",
+      "test_type": "interpolation",
+      "held_out_level": 2.0,
+      "test_rows": 16715,
+      "mean_r2": 0.8409149179131025,
+      "minimum_target_r2": 0.7150830262347532,
+      "mean_nrmse": 0.3740395771810999
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Stripping Steam Mass Flow",
+      "excel_column": "E",
+      "test_type": "interpolation",
+      "held_out_level": 2.0,
+      "test_rows": 16715,
+      "mean_r2": 0.8560199304046308,
+      "minimum_target_r2": 0.3060203346735644,
+      "mean_nrmse": 0.28324093135012923
+    },
+    {
+      "model": "Neural network",
+      "input": "Stripping Steam Mass Flow",
+      "excel_column": "E",
+      "test_type": "interpolation",
+      "held_out_level": 2.0,
+      "test_rows": 16715,
+      "mean_r2": 0.9755316022992537,
+      "minimum_target_r2": 0.9417495340025752,
+      "mean_nrmse": 0.14961024051491675
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Stripping Steam Mass Flow",
+      "excel_column": "E",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 1.5,
+      "test_rows": 16866,
+      "mean_r2": -15.254117845473681,
+      "minimum_target_r2": -45.778183158084545,
+      "mean_nrmse": 3.6361482018050086
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Stripping Steam Mass Flow",
+      "excel_column": "E",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 1.5,
+      "test_rows": 16866,
+      "mean_r2": 0.7903948174304808,
+      "minimum_target_r2": 0.03019672958745212,
+      "mean_nrmse": 0.3383109250165275
+    },
+    {
+      "model": "Neural network",
+      "input": "Stripping Steam Mass Flow",
+      "excel_column": "E",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 1.5,
+      "test_rows": 16866,
+      "mean_r2": 0.9171616416732509,
+      "minimum_target_r2": 0.7769900539915425,
+      "mean_nrmse": 0.26985477645393996
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Stripping Steam Mass Flow",
+      "excel_column": "E",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 2.5,
+      "test_rows": 16354,
+      "mean_r2": -11.580038450227567,
+      "minimum_target_r2": -25.498394091492365,
+      "mean_nrmse": 3.215158660085226
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Stripping Steam Mass Flow",
+      "excel_column": "E",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 2.5,
+      "test_rows": 16354,
+      "mean_r2": 0.9223386326462067,
+      "minimum_target_r2": 0.6317972945679803,
+      "mean_nrmse": 0.21897187321717498
+    },
+    {
+      "model": "Neural network",
+      "input": "Stripping Steam Mass Flow",
+      "excel_column": "E",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 2.5,
+      "test_rows": 16354,
+      "mean_r2": 0.8671210155894687,
+      "minimum_target_r2": 0.4741974436166897,
+      "mean_nrmse": 0.33762163116500854
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Regen Air Blower Discharge Temperature",
+      "excel_column": "F",
+      "test_type": "interpolation",
+      "held_out_level": 180.0,
+      "test_rows": 12467,
+      "mean_r2": 0.994038961496425,
+      "minimum_target_r2": 0.9837493364929704,
+      "mean_nrmse": 0.0707800308203661
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Regen Air Blower Discharge Temperature",
+      "excel_column": "F",
+      "test_type": "interpolation",
+      "held_out_level": 180.0,
+      "test_rows": 12467,
+      "mean_r2": 0.9976183296128781,
+      "minimum_target_r2": 0.9914117863805619,
+      "mean_nrmse": 0.043096061843197093
+    },
+    {
+      "model": "Neural network",
+      "input": "Regen Air Blower Discharge Temperature",
+      "excel_column": "F",
+      "test_type": "interpolation",
+      "held_out_level": 180.0,
+      "test_rows": 12467,
+      "mean_r2": 0.9947970376536537,
+      "minimum_target_r2": 0.9851760311129267,
+      "mean_nrmse": 0.06882897562977708
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Regen Air Blower Discharge Temperature",
+      "excel_column": "F",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 150.0,
+      "test_rows": 12584,
+      "mean_r2": 0.9816582205458411,
+      "minimum_target_r2": 0.9490984615499423,
+      "mean_nrmse": 0.12745980199274015
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Regen Air Blower Discharge Temperature",
+      "excel_column": "F",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 150.0,
+      "test_rows": 12584,
+      "mean_r2": 0.9975346210402416,
+      "minimum_target_r2": 0.9923317816728249,
+      "mean_nrmse": 0.043798066593246754
+    },
+    {
+      "model": "Neural network",
+      "input": "Regen Air Blower Discharge Temperature",
+      "excel_column": "F",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 150.0,
+      "test_rows": 12584,
+      "mean_r2": 0.9910948779586253,
+      "minimum_target_r2": 0.982496151513261,
+      "mean_nrmse": 0.09165784495450012
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Regen Air Blower Discharge Temperature",
+      "excel_column": "F",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 195.0,
+      "test_rows": 12461,
+      "mean_r2": 0.984737562781729,
+      "minimum_target_r2": 0.9587326783966179,
+      "mean_nrmse": 0.1158928842709863
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Regen Air Blower Discharge Temperature",
+      "excel_column": "F",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 195.0,
+      "test_rows": 12461,
+      "mean_r2": 0.9966080675495336,
+      "minimum_target_r2": 0.9856786034462118,
+      "mean_nrmse": 0.0498638671256848
+    },
+    {
+      "model": "Neural network",
+      "input": "Regen Air Blower Discharge Temperature",
+      "excel_column": "F",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 195.0,
+      "test_rows": 12461,
+      "mean_r2": 0.9927598736579268,
+      "minimum_target_r2": 0.984928839942419,
+      "mean_nrmse": 0.08314075248077973
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Riser Outlet Temperature",
+      "excel_column": "G",
+      "test_type": "interpolation",
+      "held_out_level": 535.0,
+      "test_rows": 8612,
+      "mean_r2": -4.558971387705565,
+      "minimum_target_r2": -59.12348093442918,
+      "mean_nrmse": 1.2802971988751741
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Riser Outlet Temperature",
+      "excel_column": "G",
+      "test_type": "interpolation",
+      "held_out_level": 535.0,
+      "test_rows": 8612,
+      "mean_r2": -11.68099082032258,
+      "minimum_target_r2": -63.822456431897436,
+      "mean_nrmse": 2.7512073511530364
+    },
+    {
+      "model": "Neural network",
+      "input": "Riser Outlet Temperature",
+      "excel_column": "G",
+      "test_type": "interpolation",
+      "held_out_level": 535.0,
+      "test_rows": 8612,
+      "mean_r2": 0.528426413235348,
+      "minimum_target_r2": -3.169834407495963,
+      "mean_nrmse": 0.45892931771323686
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Riser Outlet Temperature",
+      "excel_column": "G",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 475.0,
+      "test_rows": 7457,
+      "mean_r2": -42.28871728737931,
+      "minimum_target_r2": -539.0055000887221,
+      "mean_nrmse": 3.225378564519083
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Riser Outlet Temperature",
+      "excel_column": "G",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 475.0,
+      "test_rows": 7457,
+      "mean_r2": -2.5927285609070556,
+      "minimum_target_r2": -10.274918673000288,
+      "mean_nrmse": 1.6985731565009177
+    },
+    {
+      "model": "Neural network",
+      "input": "Riser Outlet Temperature",
+      "excel_column": "G",
+      "test_type": "minimum extrapolation",
+      "held_out_level": 475.0,
+      "test_rows": 7457,
+      "mean_r2": -0.11551162831963324,
+      "minimum_target_r2": -9.341765781997898,
+      "mean_nrmse": 0.8126429712176414
+    },
+    {
+      "model": "Polynomial regression",
+      "input": "Riser Outlet Temperature",
+      "excel_column": "G",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 575.0,
+      "test_rows": 8638,
+      "mean_r2": -9.085926778597088,
+      "minimum_target_r2": -55.29976697638119,
+      "mean_nrmse": 2.4704092650382483
+    },
+    {
+      "model": "Gradient boosting",
+      "input": "Riser Outlet Temperature",
+      "excel_column": "G",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 575.0,
+      "test_rows": 8638,
+      "mean_r2": -34.811976643751734,
+      "minimum_target_r2": -188.43270380282897,
+      "mean_nrmse": 4.050867376717717
+    },
+    {
+      "model": "Neural network",
+      "input": "Riser Outlet Temperature",
+      "excel_column": "G",
+      "test_type": "maximum extrapolation",
+      "held_out_level": 575.0,
+      "test_rows": 8638,
+      "mean_r2": -15.71868785310344,
+      "minimum_target_r2": -106.47914631184621,
+      "mean_nrmse": 2.5761631393359696
+    }
+  ],
+  "held_out_level_summary": {
+    "Polynomial regression": {
+      "mean_interpolation_r2": 0.17881380495431617,
+      "worst_interpolation_r2": -4.558971387705565,
+      "mean_extrapolation_r2": -4.893209318383039,
+      "worst_extrapolation_r2": -42.28871728737931
+    },
+    "Gradient boosting": {
+      "mean_interpolation_r2": -0.8462742693138925,
+      "worst_interpolation_r2": -11.68099082032258,
+      "mean_extrapolation_r2": -1.851905527170407,
+      "worst_extrapolation_r2": -34.811976643751734
+    },
+    "Neural network": {
+      "mean_interpolation_r2": 0.9262693820479676,
+      "worst_interpolation_r2": 0.528426413235348,
+      "mean_extrapolation_r2": -0.2958241774202695,
+      "worst_extrapolation_r2": -15.71868785310344
+    }
+  },
+  "physical_checks": {
+    "negative_prediction_count": 0,
+    "yield_prediction_outside_0_to_100_count": 0,
+    "conversion_prediction_outside_0_to_100_count": 0,
+    "actual_yield_sum_mean": 100.0,
+    "predicted_yield_sum_mean": 100.0023653282065,
+    "yield_sum_mean_absolute_error": 0.14616300644536703
+  },
+  "conformal_intervals": {
+    "nominal_coverage": 0.9,
+    "calibration_rows": 5000,
+    "mean_observed_coverage": 0.8987120756984079,
+    "minimum_target_coverage": 0.8895564233503555
+  },
+  "per_target_final_gradient_boosting": [
+    {
+      "target": "Bottoms, Yield %",
+      "excel_column": "T",
+      "test_r2": 0.9944375665601258,
+      "test_nrmse": 0.07458172322944898,
+      "interval_90_coverage": 0.8966656653649745,
+      "interval_90_half_width": 0.3322565200191274
+    },
+    {
+      "target": "LCO, Yield %",
+      "excel_column": "U",
+      "test_r2": 0.9987272823974184,
+      "test_nrmse": 0.03567516787040559,
+      "interval_90_coverage": 0.9074797236407329,
+      "interval_90_half_width": 0.15267582245115463
+    },
+    {
+      "target": "Naphtha, Yield %",
+      "excel_column": "V",
+      "test_r2": 0.9990663550727223,
+      "test_nrmse": 0.030555603860464447,
+      "interval_90_coverage": 0.9018724341644138,
+      "interval_90_half_width": 0.3723638412460559
+    },
+    {
+      "target": "Butenes, Yield %",
+      "excel_column": "W",
+      "test_r2": 0.9996603933160845,
+      "test_nrmse": 0.018428420548584054,
+      "interval_90_coverage": 0.8967657955341944,
+      "interval_90_half_width": 0.045739961260022
+    },
+    {
+      "target": "Propylene, Yield %",
+      "excel_column": "X",
+      "test_r2": 0.9998586895589814,
+      "test_nrmse": 0.011887406824815018,
+      "interval_90_coverage": 0.8895564233503555,
+      "interval_90_half_width": 0.03764774711823904
+    },
+    {
+      "target": "C3-C4 Paraffins, Yield %",
+      "excel_column": "Y",
+      "test_r2": 0.9998775274717521,
+      "test_nrmse": 0.011066730693749149,
+      "interval_90_coverage": 0.8925603284269551,
+      "interval_90_half_width": 0.06880444255016105
+    },
+    {
+      "target": "Dry Gas, Yield %",
+      "excel_column": "Z",
+      "test_r2": 0.9999498751106588,
+      "test_nrmse": 0.007079893314249547,
+      "interval_90_coverage": 0.9034745168719335,
+      "interval_90_half_width": 0.045778511590321536
+    },
+    {
+      "target": "Coke, Yield %",
+      "excel_column": "AA",
+      "test_r2": 0.9988690935412101,
+      "test_nrmse": 0.033628952686485906,
+      "interval_90_coverage": 0.8953639731651146,
+      "interval_90_half_width": 0.027918179631241102
+    },
+    {
+      "target": "Conversion",
+      "excel_column": "AC",
+      "test_r2": 0.9969250571854258,
+      "test_nrmse": 0.05545216690603021,
+      "interval_90_coverage": 0.9010713928106538,
+      "interval_90_half_width": 0.4720209127443127
+    },
+    {
+      "target": "Coke on Spent Cat",
+      "excel_column": "AD",
+      "test_r2": 0.994527064948325,
+      "test_nrmse": 0.07397928799113312,
+      "interval_90_coverage": 0.900670872133774,
+      "interval_90_half_width": 0.010960859377880272
+    },
+    {
+      "target": "Coke on Regen Catalyst",
+      "excel_column": "AE",
+      "test_r2": 0.9922938504385208,
+      "test_nrmse": 0.08778467725907055,
+      "interval_90_coverage": 0.8977670972263944,
+      "interval_90_half_width": 0.01451962375806648
+    },
+    {
+      "target": "Riser Catalyst Circulation Rate",
+      "excel_column": "AF",
+      "test_r2": 0.9961783403476829,
+      "test_nrmse": 0.061819573375405,
+      "interval_90_coverage": 0.9014719134875337,
+      "interval_90_half_width": 13.053491664708645
+    },
+    {
+      "target": "Regen Dense Bed Temperature",
+      "excel_column": "AG",
+      "test_r2": 0.998554318842754,
+      "test_nrmse": 0.038022114055454796,
+      "interval_90_coverage": 0.8933613697807149,
+      "interval_90_half_width": 1.8232191033250729
+    },
+    {
+      "target": "Regen Flue Gas Temperature",
+      "excel_column": "AH",
+      "test_r2": 0.9985257470715522,
+      "test_nrmse": 0.03839600146431727,
+      "interval_90_coverage": 0.9019725643336337,
+      "interval_90_half_width": 1.9646234147149926
+    },
+    {
+      "target": "Cat/Oil Ratio (Riser)",
+      "excel_column": "AI",
+      "test_r2": 0.9960827180968492,
+      "test_nrmse": 0.06258819300116225,
+      "interval_90_coverage": 0.8972664463802944,
+      "interval_90_half_width": 0.2740439819328735
+    },
+    {
+      "target": "Regen Flue Gas CO2 Emission",
+      "excel_column": "AO",
+      "test_r2": 0.9989312653040731,
+      "test_nrmse": 0.032691508009373794,
+      "interval_90_coverage": 0.9020726945028537,
+      "interval_90_half_width": 0.043741295409923886
+    }
+  ]
+}

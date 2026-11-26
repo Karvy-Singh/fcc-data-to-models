@@ -27,8 +27,10 @@ from sklearn.tree import DecisionTreeRegressor
 
 from fcc_diverse_sampler import (
     BLUE_COLUMNS,
+    INPUT_COLUMNS,
     OUTPUT_COLUMNS,
     REQUIRED_COLUMNS,
+    SAMPLING_INPUT_COUNT,
     colname,
     generate_ids,
     read_selected_full_rows,
@@ -155,15 +157,21 @@ def write_final_dataset(workbook, data, selected_ids, header, units, data_dir, s
     )
     selected_set = set(selected_ids)
     selected = [row for row in data if row[0] in selected_set]
-    source_levels = sum(len({row[1][column] for row in data}) for column in range(7))
-    selected_levels = sum(len({row[1][column] for row in selected}) for column in range(7))
+    source_levels = sum(
+        len({row[1][column] for row in data})
+        for column in range(SAMPLING_INPUT_COUNT)
+    )
+    selected_levels = sum(
+        len({row[1][column] for row in selected})
+        for column in range(SAMPLING_INPUT_COUNT)
+    )
 
     def pairs(rows):
         return {
             (left, row[1][left], right, row[1][right])
             for row in rows
-            for left in range(7)
-            for right in range(left + 1, 7)
+            for left in range(SAMPLING_INPUT_COUNT)
+            for right in range(left + 1, SAMPLING_INPUT_COUNT)
         }
 
     ranges_preserved = sum(
@@ -176,6 +184,8 @@ def write_final_dataset(workbook, data, selected_ids, header, units, data_dir, s
         'seed': seed,
         'training_pool_rows': len(data),
         'selected_rows': len(selected),
+        'model_input_columns': len(INPUT_COLUMNS),
+        'target_columns': len(OUTPUT_COLUMNS),
         'test_reserved_before_selection': True,
         'input_levels_retained': f'{selected_levels}/{source_levels}',
         'pairwise_combinations_retained': f'{len(pairs(selected))}/{len(pairs(data))}',
@@ -223,12 +233,14 @@ def main():
     y_test = y[test_mask]
     test_row_ids = row_ids[test_mask]
 
-    mean = x_train.mean(axis=0)
-    scale = x_train.std(axis=0)
+    distance_train = x_train[:, :SAMPLING_INPUT_COUNT]
+    distance_test = x_test[:, :SAMPLING_INPUT_COUNT]
+    mean = distance_train.mean(axis=0)
+    scale = distance_train.std(axis=0)
     scale[scale == 0] = 1.0
-    neighbor_model = NearestNeighbors(n_neighbors=1).fit((x_train - mean) / scale)
+    neighbor_model = NearestNeighbors(n_neighbors=1).fit((distance_train - mean) / scale)
     test_distances = neighbor_model.kneighbors(
-        (x_test - mean) / scale,
+        (distance_test - mean) / scale,
         return_distance=True,
     )[0][:, 0]
     stress_size = max(1, len(x_test) // 10)
